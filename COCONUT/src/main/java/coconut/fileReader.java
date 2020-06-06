@@ -27,7 +27,7 @@ public class fileReader {
 	 */
 	
 	public static void tsv(String cocoIDpath, String CHEMBLpath, String NPOIDpath, String FamilyPath, String output) throws IOException {
-		FileWriter fWriter = new FileWriter(output+".tsv");
+		FileWriter fWriter = new FileWriter(output+"output.tsv");
 		PrintWriter pWriter = new PrintWriter(fWriter);
 		ArrayList<String[]> IDs=getID(cocoIDpath);
 		pWriter.print("COCONUT ID	FAMILY INFO	CHEMBL ID	ZINC ID"+"\n");
@@ -188,7 +188,7 @@ public class fileReader {
 		String CHEMBLpath = "C:\\Users\\mehme\\Desktop\\COCONUT\\CMAUPv1.0_download_Ingredients_All.txt";
 		String NPOIDpath  = "C:\\Users\\mehme\\Desktop\\COCONUT\\CMAUPv1.0_download_Plant_Ingredient_Associations_allIngredients.txt";
 		String familyPath = "C:\\Users\\mehme\\Desktop\\COCONUT\\CMAUPv1.0_download_Plants.txt";
-		String path= "C:\\Users\\mehme\\Desktop\\COCONUT\\output.tsv";
+		String path= "C:\\Users\\mehme\\Desktop\\COCONUT\\";
 		tsv(cocoPath, CHEMBLpath, NPOIDpath, familyPath,path);
 	
 	}
