@@ -8,3 +8,9 @@
 ```
 $python3 Pubchem_Coconut.py --input sample.txt --output sample_retrieved.txt
 ```
+## Project Website
+- [COCONUT](https://coconut.naturalproducts.net)
+## About Us
+- [Website](https://cheminf.uni-jena.de)
+
+![GitHub Logo](https://github.com/Kohulan/DECIMER-Image-to-SMILES/blob/master/assets/CheminfGit.png?raw=true)
