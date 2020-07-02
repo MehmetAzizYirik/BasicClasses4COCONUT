@@ -1,9 +1,3 @@
-# Python script to retrive data from pubchem for COCONUT : https://coconut.naturalproducts.net
-
-# This Software is under the MIT License
-# Refer to LICENSE or https://opensource.org/licenses/MIT for more information
-# Copyright (c) 2020, Kohulan Rajan
-
 import sys
 import time
 import re
@@ -41,7 +35,7 @@ def main():
             cids.append(cid)
             coconut_ids.append(coconut_id)
 
-    print("Total Pubchem IDs: ",len(cids)," and total coconut_ids: ",len(coconut_ids))
+    print("Total Pubchem IDs: ",len(cids)," and total coconut_ids: ",len(coconut_ids),flush=True)
 
 
     for i in range(len(cids)):
@@ -49,14 +43,15 @@ def main():
             retrieve = pcp.Compound.from_cid(cids[i])
             if len(retrieve.synonyms)>0:
                 f.write(cids[i]+"\t"+str(coconut_ids[i])+"\t"+str(retrieve.synonyms[0])+
-                    "\t"+retrieve.iupac_name+"\t"+get_cas(retrieve)+"\t"+str(retrieve.synonyms) +"\n")
+                    "\t"+str(retrieve.iupac_name)+"\t"+get_cas(retrieve)+"\t"+str(retrieve.synonyms) +"\n")
                 f.flush()
             else:
                 f.write(cids[i]+"\t"+str(coconut_ids[i])+"\t"+
-                    "\t"+retrieve.iupac_name+"\n")
+                    "\t"+str(retrieve.iupac_name)+"\n")
                 f.flush()
+            
         except Exception as e:
-            print(e,cids[i])
+            print(e,cids[i],flush = True)
             coconut_ids_unprocessed.append(coconut_ids[i])
 
     for i in range(len(coconut_ids_unprocessed)):
