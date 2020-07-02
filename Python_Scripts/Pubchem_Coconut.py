@@ -1,3 +1,9 @@
+# Python script to retrive data from pubchem for COCONUT : https://coconut.naturalproducts.net  
+
+# This Software is under the MIT License    
+# Refer to LICENSE or https://opensource.org/licenses/MIT for more information  
+# Copyright (c) 2020, Kohulan Rajan
+
 import sys
 import time
 import re
